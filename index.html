@@ -1,11 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Infosec Portfolio | Danilo Fonseca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0f18;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8; /* Azul tecnológico */
+            --card-bg: #111827;
+            --border-color: #1e293b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+
+        nav { padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(10, 15, 24, 0.8); backdrop-filter: blur(10px); z-index: 100; }
+        .logo { font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--accent-color); }
+        nav ul { display: flex; list-style: none; gap: 1.5rem; }
+        nav a { text-decoration: none; color: var(--text-secondary); font-size: 0.85rem; transition: 0.3s; }
+        nav a:hover { color: var(--accent-color); }
+
+        header { padding: 100px 0 60px 0; }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 600; }
+        .hero-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; }
+
+        section { padding: 80px 0; border-top: 1px solid var(--border-color); }
+        h2 { font-size: 1.5rem; margin-bottom: 2.5rem; letter-spacing: -0.5px; }
+        h2::before { content: "> "; color: var(--accent-color); font-family: 'JetBrains Mono'; }
+
+        /* Cyber Skills Grid */
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+            gap: 2rem; 
+        }
+
+        .skill-box {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: 0.3s ease;
+        }
+
+        .skill-box:hover { border-color: var(--accent-color); transform: translateY(-2px); }
+
+        .skill-box h3 { 
+            font-size: 1.1rem; 
+            margin-bottom: 1.2rem; 
+            color: var(--accent-color); 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { 
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem; 
+            background: rgba(56, 189, 248, 0.05); 
+            color: var(--text-secondary); 
+            padding: 4px 10px; 
+            border-radius: 4px; 
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        /* Lists Styles (Writeups, Certs, Experience) */
+        .list-item { 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 1.5rem; 
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .item-info h4 { margin-bottom: 0.3rem; }
+        .item-info p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;}
+        .date { font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--text-secondary); white-space: nowrap; margin-left: 1rem; }
+        .link-action { color: var(--accent-color); text-decoration: none; font-size: 0.8rem; font-weight: 600; }
+
+        footer { padding: 60px 0; text-align: center; color: var(--text-secondary); font-size: 0.8rem; border-top: 1px solid var(--border-color); }
+
+        @media (max-width: 768px) {
+            .skills-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+            nav ul { display: none; }
+            .list-item { flex-direction: column; }
+            .date { margin-left: 0; margin-top: 0.5rem; }
+        }
+    </style>
 </head>
 <body>
-    <p>Blablabla</p>
+
+    <div class="container">
+        <nav>
+            <div class="logo">ROOT@Danilo_Fonseca ~#</div>
+            <ul>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projetos">Writeups</a></li>
+                <li><a href="#certificados">Certificações</a></li>
+                <li><a href="#experiencia">Carreira</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <h1>Security Researcher & Pentester</h1>
+            <p class="hero-subtitle">
+                Estudante de Engenharia de Software no UNICEUB se especializando na área de segurança da informação ofensiva (Red Team), além
+                conhecimentos em engenharia de dados e segurança defensiva (Blue Team).
+            <br>    
+                Comprometido com a cultura de segurança e proteção de ativos digitais.
+            </p>
+        </header>
+
+        <section id="skills">
+            <h2>Technical Arsenal</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-box">
+                    <h3>Pentest de Redes</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Nmap</span>
+                        <span class="tag">Metasploit Framework</span>
+                        <span class="tag">Traffic Analysis com Wireshark e TCPDump</span>
+                        <span class="tag">Sniffing & Spoofing</span>
+                        <span class="tag">Tunneling / Pivoting / Lateral Movement</span>
+                        <span class="tag">Exploit e Enumeração de FTP, SMB, SSH, DNS, SNMP, MySQL, PostgreSQL, MSSQL</span>
+                        <span class="tag">Brute-Forcing com Hydra, Cracmapexec, Medusa</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <h3>Pentest de Active Directory</h3>
+                    <div class="skill-tags">
+                        <span class="tag">BloodHound Analysis</span>
+                        <span class="tag">Enumeração de Hosts, Usuários e Serviços</span>
+                        <span class="tag">Kerberoasting / AS-REP Roasting</span>
+                        <span class="tag">Mimikatz & Credential Dumping</span>
+                        <span class="tag">GPO Abuse</span>
+                        <span class="tag">LLMNR/NBT-NS Poisoning com Responder e Inveigh</span>
+                        <span class="tag">Pass-the-Hash / Pass-the-Ticket com Mimikatz e Rubeus</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <h3>Pentest Web</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Burp Suite</span>
+                        <span class="tag">SQL Injection (SQLi)</span>
+                        <span class="tag">Cross-Site Scripting (XSS)</span>
+                        <span class="tag">IDOR & Falhas de Autenticação</span>
+                        <span class="tag">Local File Inclusion (LFI)</span>
+                        <span class="tag">Server Side Template Injection (SSTI)</span>
+                        <span class="tag">Directory Traversal</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <h3>Engenharia de Dados</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python (Pandas / PySpark)</span>
+                        <span class="tag">SQL Avançado</span>
+                        <span class="tag">Processos ETL / ELT</span>
+                        <span class="tag">Modelagem de Dados (Star/Snowflake Schema)</span>
+                        <span class="tag">Databases (MySQL / PostgreSQL / Snowflake / MongoDB / Redis)</span>
+                        <span class="tag">Data Warehousing</span>
+                        <span class="tag">Apache Airflow (Orquestração)</span>
+                        <span class="tag">Apache Spark (Processamento)</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <h3>Desenvolvimento</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">Git & GitHub</span>
+                        <span class="tag">Docker & Kubernetes</span>
+                        <span class="tag">Sistemas Linux e Windows</span>
+                        <span class="tag">Bash e Powershell Scripting</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <h3>Segurança Defensiva (Blue Team)</h3>
+                    <div class="skill-tags">
+                        <span class="tag">SIEM (Splunk / ELK)</span>
+                        <span class="tag">Análise de Logs</span>
+                        <span class="tag">Hardening (Linux/Windows)</span>
+                        <span class="tag">Incident Response e Threat Hunting</span>
+                        <span class="tag">EDR & Firewall Management</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Writeups & Projetos</h2>
+            <div class="list-item">
+                <div class="item-info">
+                    <h4>Exploração de vulnerabilidade em [Nome da Máquina HTB/TryHackMe]</h4>
+                    <p>Documentação detalhada do processo de exploração, desde o reconhecimento até o privilégio de root.</p>
+                    <a href="#" class="link-action">Ler Writeup ↗</a>
+                </div>
+                <span class="date">Abril 2026</span>
+            </div>
+        </section>
+
+        <section id="certificados">
+            <h2>Certificações</h2>
+            <div class="list-item">
+                <div class="item-info">
+                    <h4>CJCA - Certified Junior Cybersecurity Analyst</h4>
+                    <p>Hack the Box (HTB)</p>
+                    <a href="https://academy.hackthebox.com/achievement/badge/77ea99a1-4894-11f1-82d1-bea50ffe6cb4" class="link-action">Validar Badge ↗</a>
+                </div>
+                <span class="date">Maio 2026</span>
+            </div>
+            <div class="list-item">
+                <div class="item-info">
+                    <h4>Google Cybersecurity Certificate</h4>
+                    <p>Google</p>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/DWEH6JJ0FFW6" class="link-action">Validar Badge ↗</a>
+                </div>
+                <span class="date">Maio 2026</span>
+            </div>
+            <div class="list-item">
+                <div class="item-info">
+                    <h4>IBM Data Engineering Specialization</h4>
+                    <p>IBM</p>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/CAJ0XK13W789" class="link-action">Validar Badge ↗</a>
+                </div>
+                <span class="date">Fevereiro 2026</span>
+            </div>
+            <div class="list-item">
+                <div class="item-info">
+                    <h4>Data Engineer Associate</h4>
+                    <p>DataCamp</p>
+                    <a href="https://www.datacamp.com/certificate/DEA0017983270432" class="link-action">Validar Badge ↗</a>
+                </div>
+                <span class="date">Novembro 2025</span>
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiência & Educação</h2>
+            
+            <div class="list-item">
+                <div class="item-info">
+                    <h4>Bacharelado em Engenharia de Software</h4>
+                    <p>UNICEUB - Centro Universitário de Brasília</p>
+                </div>
+                <span class="date">2026 — 2029</span>
+            </div>
+
+            <div class="list-item">
+                <div class="item-info">
+                    <h4>Bug Hunter</h4>
+                    <p>HackerOne e BugCrowd</p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Atuando na descoberta e divulgação de bugs em aplicações web</p>
+                </div>
+                <span class="date">2026 - Presente</span>
+            </div>
+        </section>
+
+        <section id="contato" style="border-bottom: none;">
+            <h2>Get in touch</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Disponível para oportunidades em Red Team, SOC e outros campos de Segurança da Informação.</p>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com/in/danilo-fonseca-de/" class="link-action">LinkedIn</a>
+                <a href="https://github.com/dan-fonseca" class="link-action">GitHub</a>
+                <a href="https://profile.hackthebox.com/" class="link-action">HackTheBox</a>
+                <a href="https://tryhackme.com/p/ssysadm1n" class="link-action">TryHackMe</a>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Danilo Fonseca
+        </footer>
+    </div>
+
 </body>
 </html>
