@@ -9,8 +9,8 @@
         :root {
             --bg-color: #0a0f18;
             --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-color: #38bdf8; /* Azul tecnológico */
+            --text-secondary: #94a3b6;
+            --accent-color: #38bdf8;
             --card-bg: #111827;
             --border-color: #1e293b;
         }
@@ -41,7 +41,6 @@
         h2 { font-size: 1.5rem; margin-bottom: 2.5rem; letter-spacing: -0.5px; }
         h2::before { content: "> "; color: var(--accent-color); font-family: 'JetBrains Mono'; }
 
-        /* Cyber Skills Grid */
         .skills-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
@@ -78,7 +77,6 @@
             border: 1px solid rgba(56, 189, 248, 0.1);
         }
 
-        /* Lists Styles (Writeups, Certs, Experience) */
         .list-item { 
             display: flex; 
             justify-content: space-between; 
@@ -217,8 +215,8 @@
             <h2>Writeups & Projetos</h2>
             <div class="list-item">
                 <div class="item-info">
-                    <h4>Exploração de vulnerabilidade em [Nome da Máquina HTB/TryHackMe]</h4>
-                    <p>Documentação detalhada do processo de exploração, desde o reconhecimento até o privilégio de root.</p>
+                    <h4>Exploração de vulnerabilidade em [Nome da Máquina]</h4>
+                    <p>Documentação detalhada do processo de exploração, desde o reconhecimento até o root.</p>
                     <a href="#" class="link-action">Ler Writeup ↗</a>
                 </div>
                 <span class="date">Abril 2026</span>
@@ -263,7 +261,6 @@
 
         <section id="experiencia">
             <h2>Experiência & Educação</h2>
-            
             <div class="list-item">
                 <div class="item-info">
                     <h4>Bacharelado em Engenharia de Software</h4>
@@ -271,25 +268,38 @@
                 </div>
                 <span class="date">2026 — 2029</span>
             </div>
-
             <div class="list-item">
                 <div class="item-info">
                     <h4>Bug Hunter</h4>
                     <p>HackerOne e BugCrowd</p>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Atuando na descoberta e divulgação de bugs em aplicações web</p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Focado em aplicações web.</p>
                 </div>
                 <span class="date">2026 - Presente</span>
             </div>
         </section>
 
-        <section id="contato" style="border-bottom: none;">
+        <section id="contato">
             <h2>Get in touch</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Disponível para oportunidades em Red Team, SOC e outros campos de Segurança da Informação.</p>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Disponível para oportunidades em Red Team e SOC.</p>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                 <a href="https://www.linkedin.com/in/danilo-fonseca-de/" class="link-action">LinkedIn</a>
                 <a href="https://github.com/dan-fonseca" class="link-action">GitHub</a>
                 <a href="https://profile.hackthebox.com/" class="link-action">HackTheBox</a>
                 <a href="https://tryhackme.com/p/ssysadm1n" class="link-action">TryHackMe</a>
+            </div>
+        </section>
+
+        <section id="downloads" style="border-bottom: none;">
+            <h2>Links Etapa 1</h2>
+            <div class="list-item">
+                <div class="item-info">
+                    <h4>Materiais de Carreira</h4>
+                    <p>Arquivos da etapa anterior da matéria.</p>
+                    <div style="display: flex; gap: 25px; margin-top: 12px; flex-wrap: wrap;">
+                        <a href="https://docs.google.com/document/d/1fYvXZ5z9muglQ-BqvjUpWsNU_ZDOsHBEgUS6Tew6H1M/edit?usp=sharing" class="link-action">Currículo</a>
+                        <a href="https://docs.google.com/presentation/d/16Zq8WCHErx4fVMT0ScOJpnghIEhIs3zhgHUXsofg5c0/edit?usp=sharing" class="link-action">Slides</a>
+                    </div>
+                </div>
             </div>
         </section>
 
