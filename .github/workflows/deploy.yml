@@ -1,0 +1,36 @@
+name: "CD - Deploy PortfolioHUB"
+
+on:
+  push:
+    branches: [ "main" ] # Dispara apenas quando chega na branch estável
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v3
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload do Artefato Estático
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.' # Sobe a raiz onde está seu index.html
+
+      - name: Deploy para o GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
