@@ -1,0 +1,19 @@
+# Arquivos de ambiente e credenciais locais
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.cert
+*.json
+
+# Diretórios de dependências (caso use pacotes locais)
+node_modules/
+venv/
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
